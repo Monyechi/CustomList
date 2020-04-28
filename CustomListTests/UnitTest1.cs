@@ -41,17 +41,19 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Add_AddingToACustomListThatHasSomeValues_CountOfCustomListIncrements()
+        public void Add_AddingToACustomListThatHasMultipleValues_CountOfCustomListIncrements()
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
             int itemToAdd = 10;
-            int expected = 10;
+            int itemToAddTwo = 15;
+            int expected = 2;
             int actual;
 
             // act
             testList.Add(itemToAdd);
-            actual = testList[0];
+            testList.Add(itemToAddTwo);
+            actual = testList.Count;
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -62,12 +64,14 @@ namespace CustomListTests
             // arrange
             CustomList<int> testList = new CustomList<int>();
             int itemToAdd = 10;
-            int expected = 10;
+            int itemToAddTwo = 15;
+            int expected = 15;
             int actual;
 
             // act
             testList.Add(itemToAdd);
-            actual = testList[0];
+            testList.Add(itemToAddTwo);
+            actual = testList[1];
 
             // assert
             Assert.AreEqual(expected, actual);
