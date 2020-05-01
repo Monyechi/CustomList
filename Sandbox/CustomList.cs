@@ -9,6 +9,7 @@ namespace Sandbox
     public class CustomList<T>
     {
 
+
         private T[] items;
         private int count;
 
@@ -104,6 +105,25 @@ namespace Sandbox
             items[count] = item;
             count--;
         }
+        public static CustomList<int> operator +(CustomList<int> one, CustomList<int> two)
+        {
+            CustomList<int> newCustomList = new CustomList<int>();
+
+            one = new CustomList<int>();
+            one.Add(1);
+            one.Add(3);
+            one.Add(5);
+
+            two = new CustomList<int>();
+            one.Add(1);
+            one.Add(3);
+            one.Add(5);
+
+
+
+            List<int> result = one + two;
+        }
+
         
     }
 }
